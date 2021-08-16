@@ -12,25 +12,25 @@ export const Header = () => {
     return(
         <>
             {user? 
-            <>
-                <div>
-                    {user.userName}
+            <div>
+                <div className='user-header'>
+                   <h3> {user.userName}</h3>
                 </div>
-                <button onClick={logout}>
+                <button className='login-buttons3 flex' onClick={logout} >
                     Logout
                 </button>
-                <button onClick={() => history.push('/create')}>
+                <button className='login-buttons3 flex' onClick={() => history.push('/create') } >
                     Create Post
                 </button>
-            </> : 
-            <>
-                <button onClick={() => history.push('/login')}>
+            </div> : 
+            <div>
+                <button  className='login-bottons3 flex' onClick={() => history.push('/login')}>
                     Login
                 </button>
-                <button onClick={() => history.push('/register')}>
+                <button  className='login-bottons3 flex' onClick={() => history.push('/register')} >
                     Register
                 </button>
-            </>}
+            </div>}
         </>
     )
 }

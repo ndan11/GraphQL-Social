@@ -1,4 +1,4 @@
-import './App.css';
+import './style/styles.css'
 import { Home } from './screens/Home';
 import { PostDetails } from './screens/PostDetails';
 import { Login } from './screens/Login';

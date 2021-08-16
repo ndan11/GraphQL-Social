@@ -12,26 +12,28 @@ export const Post = ({data}) => {
         <div className='post' onClick={() => {
             history.push(`/post/${data.id}`)
         }}>
-            <div>
-                {data.userName}
+            <div className='username'>
+               <h1>{data.userName}</h1> 
             </div>
-            <div>
+            <div className='date-created'>
                 {calculateTime(data.createdAt)}
             </div>
-            <div>
+            <div className='text-input'>
                 {data.text}
             </div>
+            <div className="flex-box">
             <div>
                 <img src={like} height="40px"/>
-                <div>
+                <div className='likeCount'>
                     {data.likeCount}
                 </div>
             </div>
-            <div>
+            <div className='comment'>
                 <img src={comment} height="40px"/>
-                <div>
+                <div className='commentCount'>
                     {data.commentCount}
                 </div>
+            </div>
             </div>
         </div>
     )

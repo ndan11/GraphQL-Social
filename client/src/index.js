@@ -6,6 +6,7 @@ import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
 import reportWebVitals from './reportWebVitals';
 
+
 const client = new ApolloClient({
   uri: 'http://localhost:4000/'
 })
