@@ -2,7 +2,7 @@ import { useQuery } from '@apollo/react-hooks'
 import React from 'react'
 import { Post } from '../components/Post'
 import { GET_POSTS } from '../queries/PostQuery'
-import '../style/styles.css'
+
 
 export const Home = () => {
     

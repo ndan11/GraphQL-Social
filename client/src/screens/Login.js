@@ -32,20 +32,20 @@ export const Login = () => {
     })
 
     return(
-        <div>
+        <div className='login-flex login-body'>
             <label>Username or Email</label>
             <input 
                 type='text'
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-            ></input><br/>
+           className='input-box' ></input><br/>
             <label>Password</label>
             <input 
                 type='password'
                 value={password}
                 onChange={(e) => setPass(e.target.value)}
-            ></input>
-            <button onClick={() => {
+                className='input-box'></input>
+            <button className='login-button' onClick={() => {
                 loginFunc({
                     variables :{
                         email,

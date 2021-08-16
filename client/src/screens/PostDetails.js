@@ -24,7 +24,7 @@ export const PostDetails = () => {
     const {loading, error} = useQuery(GET_POSTINFO, {
         onCompleted({getPostInfo}){
             setPost(getPostInfo)
-            if(getPostInfo.likes.some((e) => e.userName == user.userName)){
+            if(getPostInfo.likes.length != 0 && ((e) => e.userName == user.userName)){
                 setLiked(true)
             }
         },
@@ -110,11 +110,11 @@ export const PostDetails = () => {
     if(error) return <div>Error</div>
 
     return(
-        <>
+        <div className='login-wrap'>
         <div className='post'>
             {user && user.userName == post.userName?
             <div> 
-                <button onClick={() => {
+                <button  className='input-box3' onClick={() => {
                     deletePost({
                         variables : {
                             token : user.token,
@@ -124,7 +124,7 @@ export const PostDetails = () => {
                 }}>
                     Delete
                 </button> 
-                <button onClick={() => {
+                <button className='input-box3 ' onClick={() => {
                     history.push({
                         pathname: `/update/${id}`,
                         state: { text: post.text }
@@ -144,7 +144,8 @@ export const PostDetails = () => {
                 {post.text}
             </div>
             <div style={{minHeight : "2rem"}}></div>
-            <button
+            <div className='flex-details'>
+            <button className='input-box3'
                 onClick={() => {
                     if(!user) return 
                     if(liked){
@@ -164,15 +165,16 @@ export const PostDetails = () => {
                     }
                 }}
             >
-                <img src={like} height="30px"/>
+                LIKE
             </button>
-            <div>Add Comment</div>
-            <input 
+
+            <div >Add Comment </div>
+            <input className='input-box2'
                 type="text" 
                 value={comment}
                 onChange={(e) => setComment(e.target.value)}
             />
-            <button
+            <button className='input-box3'
                 onClick={() => {
                     if(!user) return 
                     submitComment({       
@@ -184,8 +186,11 @@ export const PostDetails = () => {
                     })
                 }}
             >
-                <img src={send} height="30px"/>
+                SEND
             </button>
+            </div>
+     
+            
             <div style={{minHeight : "2rem"}}></div>
             <div>
                 Liked by : {getLikesList(post.likes)}
@@ -193,10 +198,13 @@ export const PostDetails = () => {
             <div>Comments : </div>
             {post.comments.map((comment) => <Comment data={comment}/>)}
         </div>
-        <button onClick={() => history.push('/')}>
+        <div className='flex' >
+        <button className='input-box3 ' onClick={() => history.push('/')}>
             Go Back
         </button>
-        </>
+        </div>
+        
+        </div>
     )
 
 }

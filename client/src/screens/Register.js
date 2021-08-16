@@ -36,44 +36,44 @@ export const Register = () => {
     })
 
     return(
-        <div>
+        <div className='login-flex-register'>
             <label>First Name</label>
             <input 
                 type='text'
                 value={values.first_name}
                 onChange={handleChange('first_name')}
-            ></input><br/>
+            className='input-box'></input><br/>
             <label>Last Name</label>
             <input 
                 type='text'
                 value={values.last_name}
                 onChange={handleChange('last_name')}
-            ></input><br/>
+                className='input-box'></input><br/>
             <label>Email</label>
             <input 
                 type='text'
                 value={values.email}
                 onChange={handleChange('email')}
-            ></input><br/>
+                className='input-box'></input><br/>
             <label>UserName</label>
             <input 
                 type='text'
                 value={values.userName}
                 onChange={handleChange('userName')}
-            ></input><br/>
+                className='input-box'></input><br/>
             <label>Password</label>
             <input 
                 type='password'
                 value={values.pass}
                 onChange={handleChange('pass')}
-            ></input><br/>
+                className='input-box'></input><br/>
             <label>Confirm Password</label>
             <input 
                 type='password'
                 value={values.con_pass}
                 onChange={handleChange('con_pass')}
-            ></input><br/>
-            <button onClick={() => {
+                className='input-box'></input><br/>
+            <button className='login-button2' onClick={() => {
                 if(values.pass != values.con_pass){
                     setError("Passwords do not match.")
                 }else{
