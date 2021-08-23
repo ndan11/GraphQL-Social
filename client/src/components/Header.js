@@ -24,10 +24,10 @@ export const Header = () => {
                 </button>
             </div> : 
             <div>
-                <button  className='login-bottons3 flex' onClick={() => history.push('/login')}>
+                <button  className='login-buttons3 flex' style={{fontSize : '1.3rem'}} onClick={() => history.push('/login')}>
                     Login
                 </button>
-                <button  className='login-bottons3 flex' onClick={() => history.push('/register')} >
+                <button  className='login-buttons3 flex' style={{fontSize : '1.3rem'}} onClick={() => history.push('/register')} >
                     Register
                 </button>
             </div>}
